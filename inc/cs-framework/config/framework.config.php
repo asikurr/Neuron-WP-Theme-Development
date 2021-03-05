@@ -21,6 +21,126 @@ $settings           = array(
 $options[]        = array();
 
 
+// ----------------------------------------------
+// a option section for Lawyer Home 2 Header    -
+// ----------------------------------------------
+$options[]      = array(
+  'name'        => 'header_social_section',
+  'title'       => 'Header Social Section',
+  'icon'        => 'fa fa-home',
+
+  // begin: fields
+  'fields'      => array(
+     array(
+          'id'              => 'header_social',
+          'type'            => 'group',
+          'title'           => 'Group Field',
+          'button_title'    => 'Add New social section',
+          'accordion_title' => 'Add New Field',
+          'fields'          => array(
+            array(
+              'id'    => 'h_social_icon',
+              'type'  => 'icon',
+              'title' => 'Give Social Icon',
+            ),
+            array(
+              'id'    => 'h_icon_link',
+              'type'  => 'text',
+              'title' => 'Give Social Icon Link',
+            ),
+          ),
+
+        ),
+    
+         array(
+            'type'    => 'heading',
+            'content' => 'Email Section',
+          ),
+        array(
+              'id'    => 'email_icon',
+              'type'  => 'icon',
+              'title' => 'Give Email Icon',
+            ),
+            array(
+              'id'    => 'email_add',
+              'type'  => 'text',
+              'title' => 'Give Email Address',
+            ),
+
+            array(
+              'id'    => 'f_consultation',
+              'type'  => 'text',
+              'title' => 'Free Consultation Text',
+            ),
+
+            array(
+              'id'    => 'f_consultation_link',
+              'type'  => 'text',
+              'title' => 'Free Consultation Link',
+            ),
+    ),
+  );
+// ----------------------------------------------
+// Lawyer Home 2 Footer Section                 -
+// ----------------------------------------------
+$options[]      = array(
+  'name'        => 'footer_section',
+  'title'       => 'Footer Section',
+  'icon'        => 'fa fa-star',
+
+  // begin: fields
+  'fields'      => array(
+    
+         array(
+            'type'    => 'heading',
+            'content' => 'Footer Bottom Heading',
+          ),
+            array(
+              'id'    => 'foo_bottom_title',
+              'type'  => 'text',
+              'title' => 'Give Foo Bottom Title',
+            ),
+
+            array(
+              'id'    => 'foo_bottom_time',
+              'type'  => 'text',
+              'title' => 'Give Office Time',
+            ),
+
+            array(
+              'id'    => 'c_text',
+              'type'  => 'text',
+              'title' => 'Give here CopyRight Text',
+            ),
+            array(
+              'id'    => 'c_name',
+              'type'  => 'text',
+              'title' => 'Give here Company Name',
+            ),
+            array(
+              'id'    => 'c_link',
+              'type'  => 'text',
+              'title' => 'Give here Company link',
+            ),
+            array(
+              'id'    => 'theme_name',
+              'type'  => 'text',
+              'title' => 'Give here Theme Name',
+            ),
+             array(
+              'id'    => 'all_right',
+              'type'  => 'text',
+              'title' => 'Give here All Right Text',
+            ),
+             array(
+              'id'    => 'power_text',
+              'type'  => 'text',
+              'title' => 'Give here Power Text',
+            ),
+    ),
+  );
+
+
 
 // ----------------------------------------
 // a option section for options overview  -

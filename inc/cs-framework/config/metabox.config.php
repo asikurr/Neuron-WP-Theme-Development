@@ -45,6 +45,13 @@ $options[] = array(
                     'default' => 'https://www.facebook.com/asikur.cse',
                 ),
                 array(
+                    'id'      => 'overview_image',
+                    'type'    => 'image',
+                    'title'   => 'Overview Image',
+                    'desc'    => 'This Image Show in your work details page',
+                    
+                ),
+                array(
                     'id'              => 'work-info-group-1',
                     'type'            => 'group',
                     'title'           => 'Work Info Group',
@@ -58,7 +65,7 @@ $options[] = array(
                             'title' => 'Information Title',
                         ),
                         array(
-                            'id'    => 'Value',
+                            'id'    => 'values',
                             'type'  => 'text',
                             'title' => 'Information Value',
                         ),
