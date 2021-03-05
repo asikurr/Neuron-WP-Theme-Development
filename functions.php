@@ -18,6 +18,8 @@ function neuron_scripts() {
 add_action( 'wp_enqueue_scripts', 'neuron_scripts' );
 apply_filters( 'widget_text', 'do_shortcode' );
 
+//Including cs framework
+require get_template_directory() . '/inc/cs-framework/cs-framework.php';
 function neuron_theme_support() {
     //this is for multi language support
     load_theme_textdomain( 'neuron-online', get_template_directory() . '/languages' );
@@ -155,7 +157,7 @@ function neuron_theme_custom_post() {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
-        'supports'           => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes' ),
+        'supports'           => array( 'title', 'editor',  'thumbnail', 'page-attributes' ),
     );
     register_post_type( 'work', $args );
 }
