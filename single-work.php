@@ -57,7 +57,7 @@ while ( have_posts() ): the_post();
 					<!-- single portfolio images -->
 					<div class="single-portfolio-images">
                         <?php $overviewImg = wp_get_attachment_image_src( $overview_image, 'large', true );?>
-                        <?php if(!empty($overview)) : ?>
+                        <?php if(!empty($overviewImg)) : ?>
 						<img class="img-responsive" src="<?php echo $overviewImg[0]; ?>" alt="" />
                         <?php else : ?>
                         <?php the_post_thumbnail('large'); endif; ?>

@@ -11,8 +11,9 @@ function neuron_scripts() {
     wp_enqueue_script( 'bootsnav', get_template_directory_uri() . '/assets/js/bootsnav.js', array( 'jquery' ), '1.0.0', true );
     wp_enqueue_script( 'carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array( 'jquery' ), '1.0.0', true );
     wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/js/wow.min.js', array( 'jquery' ), '1.0.0', true );
-    // wp_enqueue_script('ajaxchimp', get_template_directory_uri() .'/assets/js/ajaxchimp.js',array('jquery'), '1.0.0', true);
-    // wp_enqueue_script('ajaxchimpcon', get_template_directory_uri() .'/assets/js/ajaxchimp-config.js',array('jquery'), '1.0.0', true);
+   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    wp_enqueue_script( 'comment-reply' );
+    }
     wp_enqueue_script( 'neuron-script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'neuron_scripts' );
@@ -29,6 +30,8 @@ function neuron_theme_support() {
     add_theme_support( 'title-tag' );
     //enable for post thumbnail
     add_theme_support( 'post-thumbnails' );
+    //adding support for automatic title tags
+    add_image_size( 'neuron-blog-image', 740, 520, true );
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         array(
@@ -157,7 +160,7 @@ function neuron_theme_custom_post() {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
-        'supports'           => array( 'title', 'editor',  'thumbnail', 'page-attributes' ),
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
     );
     register_post_type( 'work', $args );
 }
@@ -223,13 +226,13 @@ function thumbnail_list_shortcode( $atts ) {
     while ( $q->have_posts() ): $q->the_post();
         $idd = get_the_ID();
         $list .= '
-		    <li>
-		        ' . get_the_post_thumbnail( $idd, 'thumbnail' ) . '
-		        <p><a href="' . get_permalink() . '">' . get_the_title() . '</a></p>
-		        <span>' . get_the_date( 'd F Y', $idd ) . '</span>
+			    <li>
+			        ' . get_the_post_thumbnail( $idd, 'thumbnail' ) . '
+			        <p><a href="' . get_permalink() . '">' . get_the_title() . '</a></p>
+			        <span>' . get_the_date( 'd F Y', $idd ) . '</span>
 
-			</li>
-		    ';
+				</li>
+			    ';
     endwhile;
     $list .= '</ul>';
     wp_reset_query();

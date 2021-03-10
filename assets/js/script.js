@@ -20,6 +20,10 @@
 (function ($) {
     "use strict";
 	
+	jQuery('.comment-form-comment textarea').attr('placeholder','Your Message');
+	jQuery('.comment-form-author input').attr('placeholder', 'Your Name');
+	jQuery('.comment-form-email input').attr('placeholder', 'Your Email');
+	jQuery('.comment-form-url input').attr('placeholder', 'Your Website');
 	// document ready function
 	// ============================================
     jQuery(document).ready(function ($) {
